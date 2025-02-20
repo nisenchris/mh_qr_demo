@@ -1,0 +1,4 @@
+flags:
+  - key: release-header-logo
+    aliases:
+      - releaseHeaderLogo
