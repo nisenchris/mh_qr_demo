@@ -30,10 +30,10 @@ jobs:
       - name: Build project
         run: npm run build  # Adjust based on your framework
 
-- name: Upload artifact for GitHub Pages
-  uses: actions/upload-pages-artifact@v2
-  with:
-    path: ./build  # Make sure this matches your React build output
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./build  # Make sure this matches your React build output
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
