@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mh_qr_demo/static/css/main.879a7cc4.css",
-    "main.js": "/mh_qr_demo/static/js/main.5a3f3041.js",
+    "main.js": "/mh_qr_demo/static/js/main.e9d6bce5.js",
     "static/js/453.de3d8acb.chunk.js": "/mh_qr_demo/static/js/453.de3d8acb.chunk.js",
     "static/media/astronaut.png": "/mh_qr_demo/static/media/astronaut.1d752285128b052f17fb.png",
     "static/media/astronaut_old.png": "/mh_qr_demo/static/media/astronaut_old.09554e178415a8bfc0f6.png",
@@ -10,11 +10,11 @@
     "index.html": "/mh_qr_demo/index.html",
     "static/media/heart.svg": "/mh_qr_demo/static/media/heart.d2335c446be1557dad255b4b1665035f.svg",
     "main.879a7cc4.css.map": "/mh_qr_demo/static/css/main.879a7cc4.css.map",
-    "main.5a3f3041.js.map": "/mh_qr_demo/static/js/main.5a3f3041.js.map",
+    "main.e9d6bce5.js.map": "/mh_qr_demo/static/js/main.e9d6bce5.js.map",
     "453.de3d8acb.chunk.js.map": "/mh_qr_demo/static/js/453.de3d8acb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.879a7cc4.css",
-    "static/js/main.5a3f3041.js"
+    "static/js/main.e9d6bce5.js"
   ]
 }
