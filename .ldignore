@@ -1,0 +1,8 @@
+README.md
+*.tf
+*.tfvars
+*.tfvars.json
+*.tfvars.json.example
+*.tfvars.example
+*.tfvars.example.json
+*.tfvars.example.json.example
