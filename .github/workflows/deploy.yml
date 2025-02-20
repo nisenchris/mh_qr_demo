@@ -1,56 +1,20 @@
-name: Deploy to GitHub Pages & Find LaunchDarkly Code References
-
-on:
-  push:
-    branches:
-      - main  # Change this if you're using a different branch
-
-permissions:
-  contents: write  # Required for deployment
-  pages: write  # Required for GitHub Pages
-  id-token: write  # Required for authentication
+name: Find LaunchDarkly flag code references
+on: push
+# cancel in-flight workflow run if another push was triggered
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    name: Build & Deploy to GitHub Pages
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install  # Adjust if using yarn/pnpm
-
-      - name: Build project
-        run: npm run build  # Adjust based on your framework
-
-      - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./build  # Make sure this matches your React build output
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
-
   launchDarklyCodeReferences:
     name: LaunchDarkly Code References
     runs-on: ubuntu-latest
-    needs: build-and-deploy  # Run this job after deployment
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 11  # Ensures deep enough history for flag usage lookup
-
-      - name: LaunchDarkly Code References
-        uses: launchdarkly/find-code-references@v2
-        with:
-          accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
-          projKey: kikas-qr-demo
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 11 # This value must be set if the lookback configuration option is not disabled for find-code-references. Read more: https://github.com/launchdarkly/ld-find-code-refs#searching-for-unused-flags-extinctions
+    - name: LaunchDarkly Code References
+      uses: launchdarkly/find-code-references@v2
+      with:
+        accessToken: ${{ secrets.LD_ACCESS_TOKEN }}
+        projKey: kikas-qr-demo
