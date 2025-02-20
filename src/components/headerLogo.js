@@ -9,12 +9,10 @@ const headerLogo = ({ flags }) => {
   return flags.releaseHeaderLogo ? (
     <div>
       <img src={ldlogo} className="LD-logo" alt="logo" />
-      <div style={{ color: 'white' }}>Kika true</div>
     </div>
   ) : (
     <div>
       <img src={oldldlogo} className="LD-logo" alt="logo" />
-      <div style={{ color: 'white' }}>Kika False</div>
     </div>
   );
 };
