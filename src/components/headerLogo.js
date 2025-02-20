@@ -6,7 +6,7 @@ const headerLogo = ({ flags }) => {
 
   // The React SDK automatically converts flag keys with dashes and periods to camelCase.
   // See this page for details: https://docs.launchdarkly.com/sdk/client-side/react/react-web#flag-keys
-  return flags.releaseHeaderLogo ? (
+  return flags.release-header-logo ? (
   <div>
     <img src={ldlogo} className="LD-logo" alt="logo" />
   </div>
